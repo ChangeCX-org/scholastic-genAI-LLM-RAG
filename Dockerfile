@@ -15,10 +15,10 @@ COPY . .
 RUN pip install --no-cache-dir transformers fastapi uvicorn pydantic datasets faiss-cpu
 
 # Make port available to the world outside this container
-EXPOSE 80
+EXPOSE 5000
 
 # Define environment variable
 ENV NAME World
 
 # Run app.py when the container launches
-CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "80"]
+CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "5000"]
