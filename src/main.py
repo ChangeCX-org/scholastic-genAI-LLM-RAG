@@ -1,6 +1,5 @@
 from transformers import RagTokenizer, RagRetriever, RagTokenForGeneration
 from fastapi import FastAPI
-from rag_model_handler import RAGModelHandler
 
 
 class RAGModelHandler:
