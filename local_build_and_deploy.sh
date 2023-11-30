@@ -12,4 +12,4 @@ docker tag $image_name:latest $image_name:latest
 #start the container in background
 docker run -d -p 5000:5000 $image_name:latest
 
-docker run -p 5000:5000 rag-tokenizer-container:latest
+#docker run -p 5000:5000 rag-tokenizer-container:latest
