@@ -40,3 +40,10 @@ async def generate(request: GenerateRequest):
         return {"response": response}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
+# Generate a path for / and return a simple message
+@app.get("/", status_code=200)
+async def root():
+    print("Root path called.")
+    return {"message": "Welcome to Token-RAG API"}
