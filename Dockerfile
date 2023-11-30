@@ -12,7 +12,7 @@ WORKDIR /usr/src/app
 COPY . .
 
 # Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir transformers fastapi uvicorn pydantic datasets faiss faiss-cpu
+RUN pip install --no-cache-dir transformers fastapi uvicorn pydantic datasets faiss-cpu
 
 # Make port available to the world outside this container
 EXPOSE 80
