@@ -8,7 +8,7 @@ class RAGModelHandler:
         print("Loading model... This might take a while.")
         self.tokenizer = RagTokenizer.from_pretrained("facebook/rag-token-nq")
         self.retriever = RagRetriever.from_pretrained(
-            "facebook/rag-token-nq", index_name="wiki_dpr"
+            "facebook/rag-token-nq", index_name="exact"
         )
         self.model = RagTokenForGeneration.from_pretrained(
             "facebook/rag-token-nq", retriever=self.retriever
