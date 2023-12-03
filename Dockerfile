@@ -11,8 +11,8 @@ WORKDIR /usr/src/app
 # Copy the current directory contents into the container
 COPY . .
 
-# Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir transformers fastapi uvicorn pydantic datasets faiss-cpu
+# Install any needed packages specified in requirements.txt including pytorch
+RUN pip install --no-cache-dir transformers fastapi uvicorn pydantic datasets faiss-cpu pytorch
 
 # Run app.py when the container launches
 CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "5000","--log-level", "info"]
