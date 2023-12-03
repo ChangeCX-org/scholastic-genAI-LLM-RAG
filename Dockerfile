@@ -12,9 +12,8 @@ WORKDIR /usr/src/app
 COPY . .
 
 # Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir transformers fastapi uvicorn pydantic datasets faiss-cpu
-#Install pytorch 
-RUN pip install --no-cache-dir torch==1.7.1+cpu torchvision==0.8.2+cpu torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
+RUN pip install --no-cache-dir transformers fastapi uvicorn pydantic datasets faiss-cpu torch torchvision
+
 
 # Run app.py when the container launches
 CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "5000","--log-level", "info"]
